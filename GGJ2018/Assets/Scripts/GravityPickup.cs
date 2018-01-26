@@ -8,9 +8,17 @@ public class GravityPickup : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnTriggerEnter(Collider collider) {
+        GameObject colliderObject = collider.gameObject;
+        if(colliderObject.tag == "Player") {
+            colliderObject.GetComponent<PlayerScript>().changeGravityLevel(GravityType.Reversed);
+            Destroy(this.gameObject);
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
