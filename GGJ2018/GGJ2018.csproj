@@ -369,8 +369,10 @@
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\FeetScript.cs" />
     <Compile Include="Assets\Scripts\FireScript.cs" />
+    <Compile Include="Assets\Scripts\GravityComponent.cs" />
     <Compile Include="Assets\Scripts\GravityPickup.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\Utilities.cs" />
     <Compile Include="Assets\Scripts_Eric\BehaviourPlayer.cs" />
     <Compile Include="Assets\Scripts_Eric\ChangeGravityBehaviour.cs" />
     <Compile Include="Assets\Scripts_Eric\ChangeSlider.cs" />

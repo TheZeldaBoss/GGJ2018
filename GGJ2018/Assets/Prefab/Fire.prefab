@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRadius: 2
   propagateFireDelay: 2
-  isBaseEmmitter: 1
+  isBaseEmmitter: 0
   timeToConsume: 6
 --- !u!135 &135028983819480040
 SphereCollider:

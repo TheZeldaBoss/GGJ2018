@@ -17,7 +17,7 @@ public class FireScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GetComponent<SphereCollider>().radius = fireRadius;
-        if(transform.parent.tag == "Player") {
+        if(transform.parent.tag == "Player" || Utilities.childWithTag(transform.parent, "Unflammable")) {
             Destroy(gameObject, timeToConsume);
         } else if (!isBaseEmmitter){ 
             Destroy(transform.parent.gameObject, timeToConsume);
@@ -35,22 +35,15 @@ public class FireScript : MonoBehaviour {
             Vector3 rayDirection = transform.parent.position - collidedTransform.position;
             if (Physics.Raycast(collidedTransform.position, rayDirection, out hit)) {
                 if (hit.transform == transform.parent) {
-                    if (!childWithTagExists(collidedTransform, "Fire")) {
+                    if (!Utilities.childWithTag(collidedTransform, "Fire")) {
                         GameObject transmittedFire = Instantiate(gameObject, collidedTransform);
+                        transmittedFire.transform.position = collidedTransform.position;
+                        transmittedFire.GetComponent<FireScript>().isBaseEmmitter = false;
                         transmittedFire.transform.parent = collidedTransform;
                     }
                 }
             }
         }
-    }
-        
-    bool childWithTagExists(Transform parentToCheck, string tag) {
-        foreach(Transform child in parentToCheck) {
-            if (child.tag == tag) {
-                return true;
-            }
-        }
-        return false;
     }
 
     // Update is called once per frame
