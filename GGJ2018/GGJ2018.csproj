@@ -288,14 +288,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GravityPickup.cs" />
-    <Compile Include="Assets\Scripts\PlayerScript.cs" />
-    <Compile Include="Assets\Scripts_Eric\BehaviourPlayer.cs" />
-    <Compile Include="Assets\Scripts_Eric\ChangeGravityBehaviour.cs" />
-    <Compile Include="Assets\Scripts_Eric\ChangeSlider.cs" />
-    <Compile Include="Assets\Scripts_Eric\FrictionBehaviour.cs" />
-    <Compile Include="Assets\Scripts_Eric\GravityBehaviour.cs" />
-    <Compile Include="Assets\Scripts_Eric\StickyBehaviour.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
@@ -352,6 +344,12 @@
     <Compile Include="Assets\Scripts\FireScript.cs" />
     <Compile Include="Assets\Scripts\GravityPickup.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts_Eric\BehaviourPlayer.cs" />
+    <Compile Include="Assets\Scripts_Eric\ChangeGravityBehaviour.cs" />
+    <Compile Include="Assets\Scripts_Eric\ChangeSlider.cs" />
+    <Compile Include="Assets\Scripts_Eric\FrictionBehaviour.cs" />
+    <Compile Include="Assets\Scripts_Eric\GravityBehaviour.cs" />
+    <Compile Include="Assets\Scripts_Eric\StickyBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />

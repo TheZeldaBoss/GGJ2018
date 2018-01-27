@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GravityType { Normal, Reversed, Low, High};
+public enum ContactType { Normal, Left, Right };
 
 public class PlayerScript : MonoBehaviour {
 
@@ -10,7 +11,14 @@ public class PlayerScript : MonoBehaviour {
     public float gravityValue = 9.81f;
     public float jumpForce = 10f;
 
-    private bool isGravityReversed = false;
+    public bool isGravityReversed = false;
+
+    private float rot = 0;
+    private float move = 1;
+    /*MOVE :
+     * 1 direction normal
+     * -1 direction inversé.
+     * */
 
     // Use this for initialization
     void Start () {
@@ -50,6 +58,29 @@ public class PlayerScript : MonoBehaviour {
                 break;
             case GravityType.Low:
                 gravityValue = 3f;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void surfaceContact(ContactType type)
+    {
+        switch (type)
+        {
+            case ContactType.Normal:
+                rot = 0;
+                move = 1;
+                transform.rotation = Quaternion.Euler(0, 0, rot);
+                break;
+            case ContactType.Left:
+                rot -= 90;
+                transform.rotation = Quaternion.Euler(0, 0, rot);
+                break;
+            case ContactType.Right:
+                rot += 90;
+                move = -1;
+                transform.rotation = Quaternion.Euler(0, 0, rot);
                 break;
             default:
                 break;
