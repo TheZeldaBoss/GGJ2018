@@ -6,7 +6,7 @@ public class StickyBehaviour : MonoBehaviour
 {
     public PlayerScript ps;
     public bool contact = false;
-    private float delta = 0.01f;
+    private float delta = 0.25f;
 
     // Use this for initialization
     void Start()
@@ -20,7 +20,7 @@ public class StickyBehaviour : MonoBehaviour
         if (contact)
         {
             //GetComponent<Rigidbody>().AddForce(-GetComponent<Rigidbody>().velocity/10);//Force AntiGravité V1
-            GetComponent<Rigidbody>().AddForce(Vector3.down * ps.gravityValue * 10 * (ps.isGravityReversed ? 1 : -1));
+            //GetComponent<Rigidbody>().AddForce(Vector3.down * ps.gravityValue * (ps.isGravityReversed ? 1 : -1));
         }
     }
 
