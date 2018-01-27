@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GravityType { Normal, Reversed, Low, High};
+public enum GravityType { Reversed, Normal, Low, High};
 public enum FrictionType { Normal, Glissant, Collant};
 public enum ContactType { Normal, Left, Right };
 
+
 public class PlayerScript : MonoBehaviour {
+
+    public GameObject gravityComponent;
 
     public float speed = 3.0f;
     public float speedActive;
@@ -17,6 +20,18 @@ public class PlayerScript : MonoBehaviour {
     public bool isGravityReversed = false;
 
     private float rot = 0;
+    private float move = 1;
+
+    public bool isGravityTransferable = false;
+    public bool isFrictionTransferable = false;
+
+    public float propertyDuration = 10f;
+    float timerGravity = 0f;
+    float timerFriction = 0f;
+    GravityType myGravity = GravityType.Normal;
+
+
+
     /*MOVE :
      * 1 direction normal
      * -1 direction inversé.
@@ -44,12 +59,17 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if (isGravityTransferable) {
+            timerGravity += Time.deltaTime;
+            if(timerGravity >= propertyDuration) {
+                changeGravityLevel(GravityType.Normal);
+            }
+        }
     }
 
     private void FixedUpdate() {
         Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.down * gravityValue * (isGravityReversed ? -1 : 1));
+        rb.AddForce(Vector3.down * gravityValue);
 
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * speedActive;
         this.transform.Translate(x, 0, 0);
@@ -88,28 +108,49 @@ public class PlayerScript : MonoBehaviour {
     }
 
     public void changeGravityLevel(GravityType type) {
+        myGravity = type;
         switch (type) {
             case GravityType.Normal:
                 gravityValue = 9.81f;
-                break;
-
-            case GravityType.Reversed:
-                isGravityReversed = !isGravityReversed;
-                Camera.main.transform.parent = null;
-                transform.Rotate(180f, 0, 0);
-                Camera.main.transform.parent = transform;
-                Camera.main.GetComponent<CameraScript>().reverseGravity();
-
+                if (isGravityReversed) {
+                    reverseGravity();
+                }
+                isGravityTransferable = false;
                 break;
             case GravityType.High:
+                if (isGravityReversed) {
+                    reverseGravity();
+                }
                 gravityValue = 20f;
+                isGravityTransferable = true;
                 break;
             case GravityType.Low:
-                gravityValue = 3f;
+                if (isGravityReversed) {
+                    reverseGravity();
+                }
+                gravityValue = 5f;
+                isGravityTransferable = true;
+                break;
+            case GravityType.Reversed:
+                if (!isGravityReversed) {
+                    reverseGravity();
+                }
+                isGravityTransferable = true;
+                gravityValue = -9.81f;
                 break;
             default:
                 break;
         }
+
+        timerGravity = 0f;
+    }
+
+    void reverseGravity() {
+        isGravityReversed = !isGravityReversed;
+        Camera.main.transform.parent = null;
+        transform.Rotate(180f, 0, 0);
+        Camera.main.transform.parent = transform;
+        Camera.main.GetComponent<CameraScript>().reverseGravity();
     }
 
     public void ChangeFrictionType(FrictionType type)
@@ -205,6 +246,37 @@ public class PlayerScript : MonoBehaviour {
                 surfaceContact(ContactType.Left);
             }
         }
+		
+		Transform objectHit = col.transform;
+ 
+        if (isGravityTransferable && objectHit.tag == "PropertySensitive") {
+ 
+            if (objectHit.GetComponent<GravityComponent>()) {
+ 
+                if (!objectHit.GetComponent<GravityComponent>().isEmmitter) {
+ 
+                    objectHit.GetComponent<GravityComponent>().changeGravityLevel(myGravity);
+ 
+                }
+ 
+            } else {
+ 
+                Transform gravityInstance = Utilities.childWithTag(objectHit, "Gravity");
+ 
+                if (!gravityInstance) {
+ 
+                    gravityInstance = Instantiate(gravityComponent, objectHit).transform;
+ 
+                    gravityInstance.parent = objectHit;
+ 
+                }
+ 
+                gravityInstance.GetComponent<GravityComponent>().changeGravityLevel(myGravity);
+ 
+            }
+ 
+        }
+ 
 
     }
     void OnCollisionExit(Collision col) //Si le joueur atteint un sol

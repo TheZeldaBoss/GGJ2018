@@ -12,7 +12,7 @@ public class GravityPickup : MonoBehaviour {
     private void OnTriggerEnter(Collider collider) {
         GameObject colliderObject = collider.gameObject;
         if(colliderObject.tag == "Player") {
-            colliderObject.GetComponent<PlayerScript>().changeGravityLevel(GravityType.Reversed);
+            colliderObject.GetComponent<PlayerScript>().changeGravityLevel(GravityType.Normal);
             Destroy(this.gameObject);
         }
     }
