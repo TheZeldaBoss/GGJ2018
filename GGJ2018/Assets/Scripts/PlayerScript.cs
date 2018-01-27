@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour {
 
     private void FixedUpdate() {
         Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.up * gravityValue);
+        rb.AddForce(Vector3.down * gravityValue * (isGravityReversed ? -1 : 1));
 
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
         this.transform.Translate(x, 0, 0);

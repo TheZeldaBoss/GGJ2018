@@ -6,7 +6,10 @@ public class FireScript : MonoBehaviour {
 
     public float fireRadius = 2f;
     public float propagateFireDelay = 2.0f;
-    bool canPropagateFire = false;
+    bool canPropagateFireNow = false;
+    public bool isBaseEmmitter = false;
+
+    public float timeToConsume = 6f;
 
 
     float propagateFireTimer = 0f;
@@ -14,6 +17,11 @@ public class FireScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GetComponent<SphereCollider>().radius = fireRadius;
+        if(transform.parent.tag == "Player") {
+            Destroy(gameObject, timeToConsume);
+        } else if (!isBaseEmmitter){ 
+            Destroy(transform.parent.gameObject, timeToConsume);
+        }
 	}
 
     void changeFireRadius(float newRadius) {
@@ -21,7 +29,7 @@ public class FireScript : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        if (canPropagateFire && other.gameObject.tag == "PropertySensitive" || other.gameObject.tag == "Player") {
+        if (canPropagateFireNow && other.gameObject.tag == "PropertySensitive" || other.gameObject.tag == "Player") {
             RaycastHit hit;
             Transform collidedTransform = other.transform;
             Vector3 rayDirection = transform.parent.position - collidedTransform.position;
@@ -47,10 +55,10 @@ public class FireScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (!canPropagateFire && propagateFireDelay > propagateFireTimer) {
+        if (!canPropagateFireNow && propagateFireDelay > propagateFireTimer) {
             propagateFireTimer += Time.deltaTime;
             if (propagateFireDelay <= propagateFireTimer) {
-                canPropagateFire = true;
+                canPropagateFireNow = true;
             }
         }
 	}
