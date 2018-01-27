@@ -19,8 +19,8 @@ public class StickyBehaviour : MonoBehaviour
     {
         if (contact)
         {
-            GetComponent<Rigidbody>().AddForce(-GetComponent<Rigidbody>().velocity);//Force AntiGravité V1
-            GetComponent<Rigidbody>().AddForce(Vector3.down * ps.gravityValue * (ps.isGravityReversed ? 1 : -1));
+            //GetComponent<Rigidbody>().AddForce(-GetComponent<Rigidbody>().velocity/10);//Force AntiGravité V1
+            GetComponent<Rigidbody>().AddForce(Vector3.down * ps.gravityValue * 10 * (ps.isGravityReversed ? 1 : -1));
         }
     }
 

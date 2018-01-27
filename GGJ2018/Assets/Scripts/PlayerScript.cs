@@ -31,13 +31,13 @@ public class PlayerScript : MonoBehaviour {
 
     private void FixedUpdate() {
         Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.up * gravityValue * (isGravityReversed ? 1 : -1) );
+        rb.AddForce(Vector3.up * gravityValue);
 
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
         this.transform.Translate(x, 0, 0);
 
         if(transform.Find("feet").GetComponent<FeetScript>().isGrounded)
-            rb.velocity = new Vector3(0, Input.GetAxis("Jump") * jumpForce * (isGravityReversed ? -1 : 1), 0);
+            rb.velocity = Input.GetAxis("Jump") * jumpForce * transform.up;
     }
 
     public void changeGravityLevel(GravityType type) {
