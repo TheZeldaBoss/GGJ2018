@@ -307,6 +307,12 @@
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
     </Reference>
+    <Reference Include="DestructionEditor">
+      <HintPath>Assets\Fracture - Box Destruction - Standard\Editor\DestructionEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Destruction">
+      <HintPath>Assets\Fracture - Box Destruction - Standard\Scripts\Destruction.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
