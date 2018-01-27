@@ -4,4 +4,49 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/benoit.unity
+    guid: 96284b83afcfa1842892540290e41d64
+  - enabled: 1
+    path: Assets/Scenes/clement.unity
+    guid: d095c10931cd0a54fbc1edc36e59bfdc
+  - enabled: 1
+    path: Assets/Scenes/benoit2.unity
+    guid: 41ad6cbe936a55d42b304771fdef5776
+  - enabled: 1
+    path: Assets/Scenes/Level1Test.unity
+    guid: 12569d7064bcdd645881a674f4634d0f
+  - enabled: 1
+    path: Assets/Scenes/Level2Test.unity
+    guid: b1b64e87fbc334a46a448f2f8ffe78a6
+  - enabled: 1
+    path: Assets/Scenes/Level3Test.unity
+    guid: a74d5cab389d1d04ca204852b9152a7e
+  - enabled: 1
+    path: Assets/Scenes/Level4Test.unity
+    guid: 2d21db8ce5620274fa43dad57a9a36fc
+  - enabled: 1
+    path: Assets/Scenes/Level5Test.unity
+    guid: 0f06be85b87b617449215e57ca937cf3
+  - enabled: 1
+    path: Assets/Scenes/Level6Test.unity
+    guid: c6bd0c1490ff5ee4da0c12e930f80121
+  - enabled: 1
+    path: Assets/Scenes/Level7Test.unity
+    guid: 51967b901080f0448b147c843b7d3c8e
+  - enabled: 1
+    path: Assets/Scenes/Level8Test.unity
+    guid: 171bbc87dcdc4dc4a8208f4ce6cd05de
+  - enabled: 1
+    path: Assets/Scenes/Level9Test.unity
+    guid: 860cea87337396e41b3d85e23aa92ad9
+  - enabled: 1
+    path: Assets/Scenes/Level11Test.unity
+    guid: e9800904e41fd5544b365f63506ab704
+  - enabled: 1
+    path: Assets/Scenes/Level10Test.unity
+    guid: 345ec697420c5ee47b71744fbe86d338
+  - enabled: 1
+    path: Assets/Scenes/Level12Test.unity
+    guid: aaf6cef83b202da49862ad4ad6b57b62
