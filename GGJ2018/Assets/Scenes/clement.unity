@@ -26956,7 +26956,7 @@ MonoBehaviour:
   m_Script: {fileID: 1836541618, guid: f655bb0c7d39612409a173f95e9016c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactForceThreshold: 1
+  impactForceThreshold: 3
 --- !u!54 &1564605247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26985,8 +26985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   immediate: 1
   shards:
-    min: 30
-    max: 50
+    min: 20
+    max: 30
   shardsPerFrame: 2
 --- !u!1 &1568056446
 GameObject:
