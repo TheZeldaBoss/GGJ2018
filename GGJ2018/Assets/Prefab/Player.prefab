@@ -260,12 +260,18 @@ MonoBehaviour:
   gravityComponent: {fileID: 1684509371610676, guid: 2634c450d06872641b5686e216df9712,
     type: 2}
   speed: 3
+  speedActive: 0
   gravityValue: 9.81
   jumpForce: 8
   isGravityReversed: 0
   isGravityTransferable: 0
   isFrictionTransferable: 0
   propertyDuration: 10
+  inertie: 0
+  collable: 0
+  slow: 0.5
+  stamina: 2.25
+  varcustom: 25
 --- !u!124 &124412949950828632
 Behaviour:
   m_ObjectHideFlags: 1

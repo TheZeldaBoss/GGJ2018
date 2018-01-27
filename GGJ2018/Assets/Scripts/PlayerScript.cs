@@ -49,6 +49,9 @@ public class PlayerScript : MonoBehaviour {
 
     private float prog = 0f;
 
+    private bool isFrictionEdited = false;
+    private float collantTimer = 0f;
+
     // Use this for initialization
     void Start () {
         GetComponent<Rigidbody>().useGravity = false;
@@ -63,6 +66,12 @@ public class PlayerScript : MonoBehaviour {
             timerGravity += Time.deltaTime;
             if(timerGravity >= propertyDuration) {
                 changeGravityLevel(GravityType.Normal);
+            }
+        }
+        if (isFrictionEdited) {
+            collantTimer += Time.deltaTime;
+            if(collantTimer >= propertyDuration) {
+                ChangeFrictionType(FrictionType.Normal);
             }
         }
     }
@@ -82,11 +91,7 @@ public class PlayerScript : MonoBehaviour {
         {
             if (prog <= 0) prog = 0;
             prog = (Time.time - startTime) / stamina;
-            Debug.Log(prog);
-
-            if (prog > stamina) prog = 15f;
-
-            Debug.Log(prog);
+            
             if (rot > 0)
             {
                 //ContactType.Right:
@@ -159,6 +164,8 @@ public class PlayerScript : MonoBehaviour {
         {
             case FrictionType.Normal:
                 //Etat par défaut
+
+                isFrictionEdited = false;
                 inertie = 0f;
                 jumpActive = jumpForce;
                 collable = false;
@@ -169,12 +176,16 @@ public class PlayerScript : MonoBehaviour {
                 jumpActive = jumpForce; ;
                 collable = false;
                 isFalling = false;
+                isFrictionEdited = true;
+                collantTimer = 0f;
                 break;
 
             case FrictionType.Collant:
                 jumpActive = 0f;
                 inertie = 0f;
                 collable = true;
+                isFrictionEdited = true;
+                collantTimer = 0f;
                 break;
             default:
                 break;
@@ -189,7 +200,10 @@ public class PlayerScript : MonoBehaviour {
                 isFalling = false;
                 rot = 0;
                 speedActive = speed;
+
+                Camera.main.transform.parent = null;
                 transform.rotation = Quaternion.Euler(0, 0, rot);
+                Camera.main.transform.parent = transform;
                 break;
 
             case ContactType.Left:
@@ -199,7 +213,9 @@ public class PlayerScript : MonoBehaviour {
                     startTime = Time.time;
                     speedActive = speed * slow;
                     rot -= 90;
+                    Camera.main.transform.parent = null;
                     transform.rotation = Quaternion.Euler(0, 0, rot);
+                    Camera.main.transform.parent = transform;
                 }
                 break;
 
@@ -210,8 +226,10 @@ public class PlayerScript : MonoBehaviour {
                     startTime = Time.time;
                     speedActive = speed * slow;
                     rot += 90;
+                    Camera.main.transform.parent = null;
                     transform.rotation = Quaternion.Euler(0, 0, rot);
-                    
+                    Camera.main.transform.parent = transform;
+
                 }
                 break;
             default:

@@ -14,13 +14,11 @@ public class FrictionPicker : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log(this.name);
         GameObject colliderObject = collider.gameObject;
         if (colliderObject.tag == "Player")
         {
             colliderObject.GetComponent<PlayerScript>().ChangeFrictionType(friction);
             colliderObject.GetComponent<PlayerScript>().inertie = inertie;
-           Destroy(this.gameObject);
         }
     }
 
