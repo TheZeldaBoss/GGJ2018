@@ -7,7 +7,7 @@ public class FireScript : MonoBehaviour {
     public float fireRadius = 2f;
     public float propagateFireDelay = 2.0f;
     bool canPropagateFireNow = false;
-    bool isBaseEmmitter = false;
+    public bool isBaseEmmitter = false;
 
     public float timeToConsume = 6f;
 

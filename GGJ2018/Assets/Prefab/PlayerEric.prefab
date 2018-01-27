@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114407110203191388}
   - component: {fileID: 114855867690697112}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerEric
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,9 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   gravityValue: 9.81
+  jumpForce: 10
   isGravityReversed: 0
-  rot: 0
-  move: 1
 --- !u!114 &114855867690697112
 MonoBehaviour:
   m_ObjectHideFlags: 1
