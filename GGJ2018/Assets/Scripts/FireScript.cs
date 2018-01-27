@@ -8,12 +8,19 @@ public class FireScript : MonoBehaviour {
     public float propagateFireDelay = 2.0f;
     bool canPropagateFire = false;
 
+    public float timeToConsume = 6f;
+
 
     float propagateFireTimer = 0f;
 
     // Use this for initialization
     void Start () {
         GetComponent<SphereCollider>().radius = fireRadius;
+        if(transform.parent.tag != "Player") {
+            Destroy(transform.parent.gameObject, timeToConsume);
+        } else {
+            Destroy(gameObject, timeToConsume);
+        }
 	}
 
     void changeFireRadius(float newRadius) {
