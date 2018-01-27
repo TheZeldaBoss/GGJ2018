@@ -23,7 +23,9 @@ GameObject:
   - component: {fileID: 136352537060768622}
   - component: {fileID: 23978957859307878}
   - component: {fileID: 54326305259109280}
-  - component: {fileID: 114280933824362584}
+  - component: {fileID: 114162011816981536}
+  - component: {fileID: 114407110203191388}
+  - component: {fileID: 114855867690697112}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,9 +100,9 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &114280933824362584
+--- !u!114 &114162011816981536
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,14 +110,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1949210386650474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98f9fbd502fc7fa4e8cce7e56fba87a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a5c94977930cbe4abc1aa2e533c6e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpTime: 0.05
-  jumpActive: 0
-  jumpHeight: 0.1
-  OnFloor: 0
+  ps: {fileID: 114407110203191388}
+  contact: 0
+--- !u!114 &114407110203191388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949210386650474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579fe17c3eefa47429aab91d9826fb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  gravityValue: 9.81
+  isGravityReversed: 0
+  rot: 0
+  move: 1
+--- !u!114 &114855867690697112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949210386650474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f33b1d6cb9d70a4591cff43d76a28e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inertie: 0
+  papillon: {fileID: 114407110203191388}
+  rb: {fileID: 54326305259109280}
+  slidding: 0
 --- !u!136 &136352537060768622
 CapsuleCollider:
   m_ObjectHideFlags: 1
