@@ -748,7 +748,7 @@ Prefab:
     - target: {fileID: 114407110203191388, guid: d6d6278f0f0691849a14d2b3b0176b93,
         type: 2}
       propertyPath: gravityValue
-      value: -9.81
+      value: 9.81
       objectReference: {fileID: 0}
     - target: {fileID: 114855867690697112, guid: d6d6278f0f0691849a14d2b3b0176b93,
         type: 2}
@@ -759,6 +759,16 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114407110203191388, guid: d6d6278f0f0691849a14d2b3b0176b93,
+        type: 2}
+      propertyPath: varcustom
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114407110203191388, guid: d6d6278f0f0691849a14d2b3b0176b93,
+        type: 2}
+      propertyPath: stamina
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114855867690697112, guid: d6d6278f0f0691849a14d2b3b0176b93, type: 2}
@@ -1155,7 +1165,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1656251009}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

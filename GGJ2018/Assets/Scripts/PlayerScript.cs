@@ -30,6 +30,7 @@ public class PlayerScript : MonoBehaviour {
     private bool isFalling = false;
     public float stamina = 15f; //Temps avant la fin de la montée
     private float startTime;
+    public float varcustom;
 
     private float prog = 0f;
 
@@ -69,14 +70,14 @@ public class PlayerScript : MonoBehaviour {
             if (rot > 0)
             {
                 //ContactType.Right:
-                rb.AddForce(Vector3.up * (-speedActive) * 3 * prog);
+                rb.AddForce(Vector3.up * (-speedActive) * varcustom * prog);
             }
             else
             {
                 if (rot < 0)
                 {
                     //ContactType.Left:
-                    rb.AddForce(Vector3.up * (-speedActive) * 3 * prog);
+                    rb.AddForce(Vector3.up * (-speedActive) * varcustom * prog);
                 }
             }
         }
