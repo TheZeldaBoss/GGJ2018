@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
 
-    public float translatePercentage = 0;
-    public float translateDistance = 5f;
-    public float timeForTranslation = 1f;
+    float translatePercentageGravity = 0;
+    public float translateDistanceGravity = 5f;
+    public float timeForTranslationGravity = 1f;
+
+    public float jumpMoveStrength = 0.001f;
+    public float maxHeightJump = 2f;
 
     bool isPlayerOnTop = false;
+    bool isJumping = false;
 
 	// Use this for initialization
 	void Start () {
@@ -16,21 +20,29 @@ public class CameraScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if (isPlayerOnTop && translatePercentage < 1) {
-            float actualPercentage = Mathf.Min(100 - translatePercentage, Time.deltaTime / timeForTranslation);
-            Debug.Log(actualPercentage);
-            translatePercentage += actualPercentage;
-            transform.Translate(new Vector3(0, -(actualPercentage) * translateDistance, 0));
-        } else if (!isPlayerOnTop && translatePercentage > 0) {
-            float actualPercentage = Mathf.Min(translatePercentage, Time.deltaTime / timeForTranslation);
-            translatePercentage -= actualPercentage;
-            transform.Translate(new Vector3(0, (actualPercentage) * translateDistance, 0));
-        }
-
-	}
+	void FixedUpdate () {
+        if (isPlayerOnTop && translatePercentageGravity < 1) {
+            float actualPercentage = Mathf.Min(1 - translatePercentageGravity, Time.deltaTime / timeForTranslationGravity);
+            translatePercentageGravity += actualPercentage;
+            transform.Translate(new Vector3(0, -(actualPercentage) * translateDistanceGravity, 0));
+        } else if (!isPlayerOnTop && translatePercentageGravity > 0) {
+            float actualPercentage = Mathf.Min(translatePercentageGravity, Time.deltaTime / timeForTranslationGravity);
+            translatePercentageGravity -= actualPercentage;
+            transform.Translate(new Vector3(0, (actualPercentage) * translateDistanceGravity, 0));
+        }//else if (isJumping){
+         //   transform.Translate(new Vector3(0, -jumpMoveStrength*transform.parent.GetComponent<Rigidbody>().velocity.y, 0));
+        //}
+    }
 
     public void reverseGravity() {
         isPlayerOnTop = !isPlayerOnTop;
+    }
+
+    public void jump() {
+        isJumping = true;
+    }
+
+    public void stopJump() {
+        isJumping = false;
     }
 }

@@ -30,6 +30,9 @@ public class PlayerScript : MonoBehaviour {
 
         if(transform.Find("feet").GetComponent<FeetScript>().isGrounded)
             rb.velocity = new Vector3(0, Input.GetAxis("Jump") * jumpForce * (isGravityReversed ? -1 : 1), 0);
+        if (Input.GetAxis("Jump") > 0)
+            Camera.main.GetComponent<CameraScript>().jump();
+
     }
 
     public void changeGravityLevel(GravityType type) {
