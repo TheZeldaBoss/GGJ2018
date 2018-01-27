@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class FireScript : MonoBehaviour {
 
-    float fireRadius = 2f;
+    public float fireRadius = 2f;
+    public float propagateFireDelay = 2.0f;
+    bool canPropagateFire = false;
 
-    public GameObject fireProperty;
 
-	// Use this for initialization
-	void Start () {
+    float propagateFireTimer = 0f;
+
+    // Use this for initialization
+    void Start () {
         GetComponent<SphereCollider>().radius = fireRadius;
 	}
 
@@ -18,7 +21,7 @@ public class FireScript : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        if (other.gameObject.tag == "PropertySensitive" || other.gameObject.tag == "Player") {
+        if (canPropagateFire && other.gameObject.tag == "PropertySensitive" || other.gameObject.tag == "Player") {
             RaycastHit hit;
             Transform collidedTransform = other.transform;
             Vector3 rayDirection = transform.parent.position - collidedTransform.position;
@@ -44,6 +47,11 @@ public class FireScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+        if (!canPropagateFire && propagateFireDelay > propagateFireTimer) {
+            propagateFireTimer += Time.deltaTime;
+            if (propagateFireDelay <= propagateFireTimer) {
+                canPropagateFire = true;
+            }
+        }
 	}
 }
