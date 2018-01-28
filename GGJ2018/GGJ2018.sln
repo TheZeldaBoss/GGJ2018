@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGJ2018", "GGJ2018.csproj", "{34F37DCD-085B-68A8-DE6C-7DF8C7636D4C}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGJ2018", "Assembly-CSharp.csproj", "{B17F9284-BDC9-997B-6E9E-43F17799C96E}"
 EndProject
 Project("{3DC8588A-E06E-68C8-49FA-6F059EC0728B}") = "GGJ2018", "Assembly-UnityScript.unityproj", "{5441BD1A-B616-6E9E-BABD-DE3284BAF8CE}"
 EndProject
@@ -28,5 +28,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
