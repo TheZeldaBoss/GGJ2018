@@ -51,6 +51,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Detonator Explosion Framework\Sample Supporting Emitters\DetonatorSprayHelper.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\Detonator.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorBurstEmitter.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorCloudRing.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorComponent.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorFireball.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorForce.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorGlow.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorHeatwave.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorLight.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorShockwave.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSmoke.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSound.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSparks.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSpray.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\TestScene\DetonatorTest.cs" />
+     <Compile Include="Assets\Detonator Explosion Framework\TestScene\TouchToMouse.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
@@ -109,16 +126,31 @@
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
      <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\ExplosiveScript.cs" />
      <Compile Include="Assets\Scripts\FeetScript.cs" />
      <Compile Include="Assets\Scripts\FireScript.cs" />
+     <Compile Include="Assets\Scripts\GravityComponent.cs" />
      <Compile Include="Assets\Scripts\GravityPickup.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\Utilities.cs" />
+     <Compile Include="Assets\Scripts\WaterScript.cs" />
      <Compile Include="Assets\Scripts_Eric\BehaviourPlayer.cs" />
      <Compile Include="Assets\Scripts_Eric\ChangeGravityBehaviour.cs" />
      <Compile Include="Assets\Scripts_Eric\ChangeSlider.cs" />
      <Compile Include="Assets\Scripts_Eric\FrictionBehaviour.cs" />
+     <Compile Include="Assets\Scripts_Eric\FrictionPicker.cs" />
      <Compile Include="Assets\Scripts_Eric\GravityBehaviour.cs" />
+     <Compile Include="Assets\Scripts_Eric\Soufle.cs" />
      <Compile Include="Assets\Scripts_Eric\StickyBehaviour.cs" />
+     <Compile Include="Assets\Scripts_Eric\VentilatreurBehaviour.cs" />
+     <Compile Include="Assets\Scripts-menu\EndOfGame.cs" />
+     <Compile Include="Assets\Scripts-menu\EndOfLevel.cs" />
+     <Compile Include="Assets\Scripts-menu\gestionMenuFin.cs" />
+     <Compile Include="Assets\Scripts-menu\levelSelectionMenu.cs" />
+     <Compile Include="Assets\Scripts-menu\mainMenu.cs" />
+     <Compile Include="Assets\Scripts-menu\MenuController.cs" />
+     <Compile Include="Assets\Scripts-menu\MouseHoverLevel.cs" />
+     <Compile Include="Assets\Scripts-menu\MouseHoverMenu.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />
      <None Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\README.txt" />
@@ -174,6 +206,7 @@
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_VertexShader.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_NormalPreview.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
+     <None Include="Assets\Detonator Explosion Framework\Resources\Detonator\Textures\HeatDistort.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
      <None Include="Assets\ProCore\ProBuilder\Shader\pb_ScrollHighlight.shader" />
