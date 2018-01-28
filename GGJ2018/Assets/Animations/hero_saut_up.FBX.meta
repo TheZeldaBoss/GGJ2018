@@ -1,0 +1,256 @@
+fileFormatVersion: 2
+guid: a3d15dbdcac315e44a8f99d490fabb44
+timeCreated: 1517134978
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Anim_Bassin
+    100002: Anim_Colonne002
+    100004: Anim_Cou
+    100006: Anim_Hero01
+    100008: Anim_Left_elbow
+    100010: Anim_Left_IK_Arm001
+    100012: Anim_Left_IK_Foot001
+    100014: Anim_Left_Shoulder
+    100016: Anim_Pelvis
+    100018: Anim_Right_Elbow
+    100020: Anim_Right_IK_Arm
+    100022: Anim_Right_IK_Foot
+    100024: Anim_Right_Shoulder
+    100026: Anim_Tete
+    100028: Bone005
+    100030: Bone006
+    100032: Bone007
+    100034: Bone014
+    100036: Bone015
+    100038: Bone016
+    100040: Bone023
+    100042: Bone026
+    100044: Bone027
+    100046: Bone028
+    100048: Bone029
+    100050: Bone031
+    100052: Bone032
+    100054: Bone033
+    100056: Bone036
+    100058: Bone037
+    100060: Bone038
+    100062: Corps
+    100064: END1
+    100066: END4
+    100068: END5
+    100070: END7
+    100072: END8
+    100074: //RootNode
+    100076: IK_Goal_left_foot
+    100078: IK_Goal_Right_foot
+    100080: LP_Couette
+    100082: LP_Eye_Right
+    100084: LP_Eye_Right001
+    100086: LP_Head
+    100088: LP_Queue_Down
+    100090: LP_Queue_Middle
+    100092: LP_Queue_Top
+    100094: LP_Sourcile_Right
+    100096: LP_Sourcile_Right001
+    100098: LP_Tete
+    100100: LP_Top_Hair
+    100102: Pelvis
+    400000: Anim_Bassin
+    400002: Anim_Colonne002
+    400004: Anim_Cou
+    400006: Anim_Hero01
+    400008: Anim_Left_elbow
+    400010: Anim_Left_IK_Arm001
+    400012: Anim_Left_IK_Foot001
+    400014: Anim_Left_Shoulder
+    400016: Anim_Pelvis
+    400018: Anim_Right_Elbow
+    400020: Anim_Right_IK_Arm
+    400022: Anim_Right_IK_Foot
+    400024: Anim_Right_Shoulder
+    400026: Anim_Tete
+    400028: Bone005
+    400030: Bone006
+    400032: Bone007
+    400034: Bone014
+    400036: Bone015
+    400038: Bone016
+    400040: Bone023
+    400042: Bone026
+    400044: Bone027
+    400046: Bone028
+    400048: Bone029
+    400050: Bone031
+    400052: Bone032
+    400054: Bone033
+    400056: Bone036
+    400058: Bone037
+    400060: Bone038
+    400062: Corps
+    400064: END1
+    400066: END4
+    400068: END5
+    400070: END7
+    400072: END8
+    400074: //RootNode
+    400076: IK_Goal_left_foot
+    400078: IK_Goal_Right_foot
+    400080: LP_Couette
+    400082: LP_Eye_Right
+    400084: LP_Eye_Right001
+    400086: LP_Head
+    400088: LP_Queue_Down
+    400090: LP_Queue_Middle
+    400092: LP_Queue_Top
+    400094: LP_Sourcile_Right
+    400096: LP_Sourcile_Right001
+    400098: LP_Tete
+    400100: LP_Top_Hair
+    400102: Pelvis
+    2100000: Corps
+    2100002: Tete
+    2100004: Cheveux top
+    2100006: Sourcil
+    2100008: eyes
+    2100010: Couette
+    2100012: queuetop
+    2100014: Queue middle
+    2100016: Queue down
+    2100018: No Name
+    2300000: Anim_Bassin
+    2300002: Anim_Cou
+    2300004: Anim_Left_elbow
+    2300006: Anim_Left_Shoulder
+    2300008: Anim_Right_Elbow
+    2300010: Anim_Right_Shoulder
+    2300012: Anim_Tete
+    2300014: LP_Couette
+    2300016: LP_Eye_Right
+    2300018: LP_Eye_Right001
+    2300020: LP_Head
+    2300022: LP_Queue_Down
+    2300024: LP_Queue_Middle
+    2300026: LP_Queue_Top
+    2300028: LP_Sourcile_Right
+    2300030: LP_Sourcile_Right001
+    2300032: LP_Top_Hair
+    3300000: Anim_Bassin
+    3300002: Anim_Cou
+    3300004: Anim_Left_elbow
+    3300006: Anim_Left_Shoulder
+    3300008: Anim_Right_Elbow
+    3300010: Anim_Right_Shoulder
+    3300012: Anim_Tete
+    3300014: LP_Couette
+    3300016: LP_Eye_Right
+    3300018: LP_Eye_Right001
+    3300020: LP_Head
+    3300022: LP_Queue_Down
+    3300024: LP_Queue_Middle
+    3300026: LP_Queue_Top
+    3300028: LP_Sourcile_Right
+    3300030: LP_Sourcile_Right001
+    3300032: LP_Top_Hair
+    4300000: Corps
+    4300002: LP_Head
+    4300004: LP_Top_Hair
+    4300006: LP_Sourcile_Right001
+    4300008: LP_Eye_Right001
+    4300010: LP_Eye_Right
+    4300012: LP_Sourcile_Right
+    4300014: LP_Couette
+    4300016: LP_Queue_Top
+    4300018: LP_Queue_Middle
+    4300020: LP_Queue_Down
+    4300022: Anim_Left_Shoulder
+    4300024: Anim_Left_elbow
+    4300026: Anim_Right_Shoulder
+    4300028: Anim_Right_Elbow
+    4300030: Anim_Bassin
+    4300032: Anim_Cou
+    4300034: Anim_Tete
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Corps
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

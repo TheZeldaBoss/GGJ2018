@@ -65,6 +65,10 @@ public class PlayerScript : MonoBehaviour {
 
     public GameObject waterComponent;
 
+    public AudioClip jumpClip;//Il faut changer les noms pour chaque SFX
+
+    public AudioSource MusicSource;
+
     // Use this for initialization
     void Start() {
         GetComponent<Rigidbody>().useGravity = false;
@@ -124,8 +128,11 @@ public class PlayerScript : MonoBehaviour {
         }
 
 
-        if (transform.Find("feet").GetComponent<FeetScript>().isGrounded)
+        if (transform.Find("feet").GetComponent<FeetScript>().isGrounded) {
             rb.velocity = Input.GetAxis("Jump") * jumpActive * transform.up;
+            MusicSource.clip = jumpClip;
+            MusicSource.Play();
+        }
     }
 
     public void changeGravityLevel(GravityType type) {
@@ -284,6 +291,13 @@ public class PlayerScript : MonoBehaviour {
         foreach (Transform tr in transform) {
             tr.gameObject.layer = 4;
         }
+        /*foreach (GameObject go in GameObject.FindGameObjectsWithTag("BlobHero")) {
+            go.GetComponent<Renderer>().enabled = true;
+        }
+
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("CorpHero")) {
+            go.GetComponent<Renderer>().enabled = false;
+        }*/
         liquidTimer = 0;
     }
 
@@ -293,6 +307,14 @@ public class PlayerScript : MonoBehaviour {
         foreach (Transform tr in transform) {
             tr.gameObject.layer = 0;
         }
+
+        /*foreach (GameObject go in GameObject.FindGameObjectsWithTag("BlobHero")) {
+            go.GetComponent<Renderer>().enabled = false;
+        }
+
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("CorpHero")) {
+            go.GetComponent<Renderer>().enabled = true;
+        }*/
     }
 
     void OnCollisionEnter(Collision col) //Si le joueur atteint un sol
