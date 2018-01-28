@@ -53,7 +53,6 @@ public class PlayerScript : MonoBehaviour {
     private bool isFrictionEdited = false;
     private float collantTimer = 0f;
 
-    public bool isLiquid = false;
     private float liquidTimer = 0f;
 
     public GameObject waterComponent;
