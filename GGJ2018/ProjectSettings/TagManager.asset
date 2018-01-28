@@ -9,6 +9,8 @@ TagManager:
   - PropertySensitive
   - Gravity
   - Unflammable
+  - Bonus
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - 
   - Properties
-  - 
+  - TraversableByWater
   - 
   - 
   - 

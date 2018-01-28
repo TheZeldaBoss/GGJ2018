@@ -52,26 +52,39 @@ public class PlayerScript : MonoBehaviour {
     private bool isFrictionEdited = false;
     private float collantTimer = 0f;
 
+    public bool isLiquid = false;
+    private float liquidTimer = 0f;
+
+    public GameObject waterComponent;
+
     // Use this for initialization
-    void Start () {
+    void Start() {
         GetComponent<Rigidbody>().useGravity = false;
         jumpActive = jumpForce;
         speedActive = speed;
         slid = Vector3.zero;
-}
-	
-	// Update is called once per frame
-	void Update () {
+        Physics.IgnoreLayerCollision(4, 9);
+    }
+
+    // Update is called once per frame
+    void Update() {
         if (isGravityTransferable) {
             timerGravity += Time.deltaTime;
-            if(timerGravity >= propertyDuration) {
+            if (timerGravity >= propertyDuration) {
                 changeGravityLevel(GravityType.Normal);
             }
         }
         if (isFrictionEdited) {
             collantTimer += Time.deltaTime;
-            if(collantTimer >= propertyDuration) {
+            if (collantTimer >= propertyDuration) {
                 ChangeFrictionType(FrictionType.Normal);
+            }
+        }
+
+        if (isLiquid) {
+            liquidTimer += Time.deltaTime;
+            if (liquidTimer >= propertyDuration) {
+                setSolid();
             }
         }
     }
@@ -87,26 +100,21 @@ public class PlayerScript : MonoBehaviour {
         slid = Slidder(slid);
         transform.Translate(slid * Time.deltaTime);
 
-        if (isFalling)
-        {
+        if (isFalling) {
             if (prog <= 0) prog = 0;
             prog = (Time.time - startTime) / stamina;
-            
-            if (rot > 0)
-            {
+
+            if (rot > 0) {
                 //ContactType.Right:
                 rb.AddForce(Vector3.up * (-speedActive) * varcustom * prog);
-            }
-            else
-            {
-                if (rot < 0)
-                {
+            } else {
+                if (rot < 0) {
                     //ContactType.Left:
                     rb.AddForce(Vector3.up * (-speedActive) * varcustom * prog);
                 }
             }
         }
-        
+
 
         if (transform.Find("feet").GetComponent<FeetScript>().isGrounded)
             rb.velocity = Input.GetAxis("Jump") * jumpActive * transform.up;
@@ -158,10 +166,8 @@ public class PlayerScript : MonoBehaviour {
         Camera.main.GetComponent<CameraScript>().reverseGravity();
     }
 
-    public void ChangeFrictionType(FrictionType type)
-    {
-        switch (type)
-        {
+    public void ChangeFrictionType(FrictionType type) {
+        switch (type) {
             case FrictionType.Normal:
                 //Etat par défaut
 
@@ -192,10 +198,8 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    public void surfaceContact(ContactType type)
-    {
-        switch (type)
-        {
+    public void surfaceContact(ContactType type) {
+        switch (type) {
             case ContactType.Normal:
                 isFalling = false;
                 rot = 0;
@@ -207,8 +211,7 @@ public class PlayerScript : MonoBehaviour {
                 break;
 
             case ContactType.Left:
-                if (collable)
-                {
+                if (collable) {
                     isFalling = true;
                     startTime = Time.time;
                     speedActive = speed * slow;
@@ -220,8 +223,7 @@ public class PlayerScript : MonoBehaviour {
                 break;
 
             case ContactType.Right:
-                if (collable)
-                {
+                if (collable) {
                     isFalling = true;
                     startTime = Time.time;
                     speedActive = speed * slow;
@@ -234,67 +236,76 @@ public class PlayerScript : MonoBehaviour {
                 break;
             default:
                 break;
-        }      
+        }
     }
 
-    Vector3 Slidder(Vector3 glisseur)
-    {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
+    Vector3 Slidder(Vector3 glisseur) {
+        if (Input.GetKey(KeyCode.LeftArrow)) {
             glisseur = Vector3.left * speedActive;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
+        if (Input.GetKey(KeyCode.RightArrow)) {
             glisseur = Vector3.right * speedActive;
         }
         glisseur *= inertie;
         return glisseur;
     }
 
+    public void setLiquid() {
+        isLiquid = true;
+        gameObject.layer = 4;
+        foreach (Transform tr in transform) {
+            tr.gameObject.layer = 4;
+        }
+        liquidTimer = 0;
+    }
+
+    public void setSolid() {
+        isLiquid = false;
+        gameObject.layer = 0;
+        foreach (Transform tr in transform) {
+            tr.gameObject.layer = 0;
+        }
+    }
+
     void OnCollisionEnter(Collision col) //Si le joueur atteint un sol
     {
-        if ((col.gameObject.tag == "Ground") && (collable))
-        {
-            if (col.contacts[0].point.x > GetComponent<Transform>().position.x + delta)
-            {
+        if ((col.gameObject.tag == "Ground") && (collable)) {
+            if (col.contacts[0].point.x > GetComponent<Transform>().position.x + delta) {
                 surfaceContact(ContactType.Right);
             }
-            if ((col.contacts[0].point.x) < GetComponent<Transform>().position.x - delta)
-            {
+            if ((col.contacts[0].point.x) < GetComponent<Transform>().position.x - delta) {
                 surfaceContact(ContactType.Left);
             }
         }
-		
-		Transform objectHit = col.transform;
- 
+
+        Transform objectHit = col.transform;
+
         if (isGravityTransferable && objectHit.tag == "PropertySensitive") {
- 
+
             if (objectHit.GetComponent<GravityComponent>()) {
- 
                 if (!objectHit.GetComponent<GravityComponent>().isEmmitter) {
- 
                     objectHit.GetComponent<GravityComponent>().changeGravityLevel(myGravity);
- 
                 }
- 
+
             } else {
- 
                 Transform gravityInstance = Utilities.childWithTag(objectHit, "Gravity");
- 
                 if (!gravityInstance) {
- 
                     gravityInstance = Instantiate(gravityComponent, objectHit).transform;
- 
                     gravityInstance.parent = objectHit;
- 
                 }
- 
+
                 gravityInstance.GetComponent<GravityComponent>().changeGravityLevel(myGravity);
- 
             }
- 
+
         }
- 
+
+        if (isLiquid && objectHit.tag == "PropertySensitive") {
+            Transform waterInstance = Utilities.childWithTag(objectHit, "Water");
+            if (!waterInstance) {
+                waterInstance = Instantiate(waterComponent, objectHit).transform;
+                waterInstance.parent = objectHit;
+            }
+        }
 
     }
     void OnCollisionExit(Collision col) //Si le joueur atteint un sol

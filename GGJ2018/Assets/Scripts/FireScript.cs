@@ -10,6 +10,7 @@ public class FireScript : MonoBehaviour {
     public bool isBaseEmmitter = false;
 
     public float timeToConsume = 6f;
+    float consumeTimer = 0f;
 
 
     float propagateFireTimer = 0f;
@@ -17,11 +18,6 @@ public class FireScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GetComponent<SphereCollider>().radius = fireRadius;
-        if(transform.parent.tag == "Player" || Utilities.childWithTag(transform.parent, "Unflammable")) {
-            Destroy(gameObject, timeToConsume);
-        } else if (!isBaseEmmitter){ 
-            Destroy(transform.parent.gameObject, timeToConsume);
-        }
 	}
 
     void changeFireRadius(float newRadius) {
@@ -29,17 +25,19 @@ public class FireScript : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        if (canPropagateFireNow && other.gameObject.tag == "PropertySensitive" || other.gameObject.tag == "Player") {
-            RaycastHit hit;
-            Transform collidedTransform = other.transform;
-            Vector3 rayDirection = transform.parent.position - collidedTransform.position;
-            if (Physics.Raycast(collidedTransform.position, rayDirection, out hit)) {
-                if (hit.transform == transform.parent) {
-                    if (!Utilities.childWithTag(collidedTransform, "Fire")) {
-                        GameObject transmittedFire = Instantiate(gameObject, collidedTransform);
-                        transmittedFire.transform.position = collidedTransform.position;
-                        transmittedFire.GetComponent<FireScript>().isBaseEmmitter = false;
-                        transmittedFire.transform.parent = collidedTransform;
+        if(!(transform.parent.tag == "Player" && transform.parent.GetComponent<PlayerScript>().isLiquid)) {
+            if (canPropagateFireNow && other.gameObject.tag == "PropertySensitive" || other.gameObject.tag == "Player") {
+                RaycastHit hit;
+                Transform collidedTransform = other.transform;
+                Vector3 rayDirection = transform.parent.position - collidedTransform.position;
+                if (Physics.Raycast(collidedTransform.position, rayDirection, out hit)) {
+                    if (hit.transform == transform.parent) {
+                        if (!Utilities.childWithTag(collidedTransform, "Fire")) {
+                            GameObject transmittedFire = Instantiate(gameObject, collidedTransform);
+                            transmittedFire.transform.position = collidedTransform.position;
+                            transmittedFire.GetComponent<FireScript>().isBaseEmmitter = false;
+                            transmittedFire.transform.parent = collidedTransform;
+                        }
                     }
                 }
             }
@@ -54,5 +52,15 @@ public class FireScript : MonoBehaviour {
                 canPropagateFireNow = true;
             }
         }
-	}
+        if (!isBaseEmmitter) {
+            consumeTimer += Time.deltaTime;
+        }
+        if (consumeTimer >= timeToConsume) {
+            if (transform.parent.tag == "Player" || Utilities.childWithTag(transform.parent, "Unflammable")) {
+                Destroy(this.gameObject);
+            } else {
+                Destroy(transform.parent.gameObject);
+            }
+        }
+    }
 }
