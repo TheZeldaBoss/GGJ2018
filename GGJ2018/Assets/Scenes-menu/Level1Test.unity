@@ -1030,7 +1030,15 @@ MonoBehaviour:
   stamina: 15
   varcustom: 0
   isLiquid: 0
+  isCol: 0
+  isLourd: 0
+  isFeu: 0
+  isAim: 0
+  isLeger: 0
+  isGlisse: 0
   waterComponent: {fileID: 0}
+  jumpClip: {fileID: 0}
+  MusicSource: {fileID: 0}
 --- !u!54 &576297347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1995,7 +2003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1140391424
 MonoBehaviour:
   m_ObjectHideFlags: 0
