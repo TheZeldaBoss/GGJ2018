@@ -124,7 +124,8 @@ public class PlayerScript : MonoBehaviour {
         myGravity = type;
         switch (type) {
             case GravityType.Normal:
-                gravityValue = 9.81f;
+                gravityValue = 9f;
+                jumpForce = 6f;
                 if (isGravityReversed) {
                     reverseGravity();
                 }
@@ -134,7 +135,8 @@ public class PlayerScript : MonoBehaviour {
                 if (isGravityReversed) {
                     reverseGravity();
                 }
-                gravityValue = 20f;
+                gravityValue = 30f;
+                jumpForce = 10f;
                 isGravityTransferable = true;
                 break;
             case GravityType.Low:
@@ -142,6 +144,7 @@ public class PlayerScript : MonoBehaviour {
                     reverseGravity();
                 }
                 gravityValue = 5f;
+                jumpForce = 6f;
                 isGravityTransferable = true;
                 break;
             case GravityType.Reversed:
@@ -149,7 +152,8 @@ public class PlayerScript : MonoBehaviour {
                     reverseGravity();
                 }
                 isGravityTransferable = true;
-                gravityValue = -9.81f;
+                gravityValue = -9f;
+                jumpForce = 6f;
                 break;
             default:
                 break;
