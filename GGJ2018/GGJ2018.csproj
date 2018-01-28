@@ -374,7 +374,9 @@
     <Compile Include="Assets\Scripts_Eric\FrictionBehaviour.cs" />
     <Compile Include="Assets\Scripts_Eric\FrictionPicker.cs" />
     <Compile Include="Assets\Scripts_Eric\GravityBehaviour.cs" />
+    <Compile Include="Assets\Scripts_Eric\Soufle.cs" />
     <Compile Include="Assets\Scripts_Eric\StickyBehaviour.cs" />
+    <Compile Include="Assets\Scripts_Eric\VentilatreurBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />

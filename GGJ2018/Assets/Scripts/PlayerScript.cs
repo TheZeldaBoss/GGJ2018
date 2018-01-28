@@ -33,6 +33,7 @@ public class PlayerScript : MonoBehaviour {
     public float varcustom;
 
     private float prog = 0f;
+    public bool isLiquid = false;
 
     // Use this for initialization
     void Start () {

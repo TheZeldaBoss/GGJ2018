@@ -7,6 +7,8 @@ TagManager:
   - Fire
   - Ground
   - PropertySensitive
+  - Bonus
+  - Water
   layers:
   - Default
   - TransparentFX
