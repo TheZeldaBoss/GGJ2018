@@ -59,7 +59,11 @@ public class FireScript : MonoBehaviour {
             if (transform.parent.tag == "Player" || Utilities.childWithTag(transform.parent, "Unflammable")) {
                 Destroy(this.gameObject);
             } else {
-                Destroy(transform.parent.gameObject);
+                Transform explosif = Utilities.childWithTag(this.transform.parent.transform, "Explosive");
+                if (explosif) {
+                    explosif.GetComponent<ExplosiveScript>().explode();
+                } else
+                    Destroy(transform.parent.gameObject);
             }
         }
     }

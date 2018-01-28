@@ -11,6 +11,8 @@ TagManager:
   - Unflammable
   - Bonus
   - Water
+  - Explosive
+  - Explodable
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - 
   - Properties
   - TraversableByWater
-  - 
-  - 
+  - ProjectileExplosive
+  - DestructibleByExplosive
   - 
   - 
   - 
