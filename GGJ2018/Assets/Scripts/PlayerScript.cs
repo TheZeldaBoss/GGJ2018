@@ -48,6 +48,7 @@ public class PlayerScript : MonoBehaviour {
     public float varcustom;
 
     private float prog = 0f;
+    public bool isLiquid = false;
 
     private bool isFrictionEdited = false;
     private float collantTimer = 0f;
