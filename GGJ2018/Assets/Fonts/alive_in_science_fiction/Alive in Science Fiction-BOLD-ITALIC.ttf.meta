@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: b4271b5aa2098fa48aa1ebc9d12fb60a
+timeCreated: 1517133024
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Alive in a Science Fiction
+  fontNames:
+  - Alive in a Science Fiction
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 396d05106c05e5d4b9b84bcde2c467d2, type: 3}
+  - {fileID: 12800000, guid: 90ed1d70851d4e64b99a979f90930624, type: 3}
+  - {fileID: 12800000, guid: 1a6fedd5d3cb8c3478656d861b829c03, type: 3}
+  - {fileID: 12800000, guid: 9eb61647436ec8947b1c46a154755df5, type: 3}
+  - {fileID: 12800000, guid: b2ae9f0aa4b36d843941614a52ffa0f6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

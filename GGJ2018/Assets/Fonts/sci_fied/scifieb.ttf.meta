@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: c3ec758bc47e10342a976eda0592943d
+timeCreated: 1517133024
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sci Fied
+  fontNames:
+  - Sci Fied
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 026f529681b64b14f9eec8e956ff6c12, type: 3}
+  - {fileID: 12800000, guid: 904b4af8f985be8499522967a4367226, type: 3}
+  - {fileID: 12800000, guid: 3cea8ddaba8bbc0479b59f0a90f684b3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

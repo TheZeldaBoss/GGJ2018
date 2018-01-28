@@ -48,12 +48,20 @@ public class PlayerScript : MonoBehaviour {
     public float varcustom;
 
     private float prog = 0f;
+
     public bool isLiquid = false;
 
     private bool isFrictionEdited = false;
     private float collantTimer = 0f;
 
     private float liquidTimer = 0f;
+
+    public bool isCol = false;
+    public bool isLourd = false;
+    public bool isFeu = false;
+    public bool isAim = false;
+    public bool isLeger = false;
+    public bool isGlisse = false;
 
     public GameObject waterComponent;
 
@@ -124,6 +132,8 @@ public class PlayerScript : MonoBehaviour {
         myGravity = type;
         switch (type) {
             case GravityType.Normal:
+                isLourd = false;
+                isLeger = false;
                 gravityValue = 9f;
                 jumpForce = 6f;
                 if (isGravityReversed) {
@@ -131,7 +141,10 @@ public class PlayerScript : MonoBehaviour {
                 }
                 isGravityTransferable = false;
                 break;
+
             case GravityType.High:
+                isLourd = true;
+                isLeger = false;
                 if (isGravityReversed) {
                     reverseGravity();
                 }
@@ -139,7 +152,10 @@ public class PlayerScript : MonoBehaviour {
                 jumpForce = 10f;
                 isGravityTransferable = true;
                 break;
+
             case GravityType.Low:
+                isLourd = false;
+                isLeger = true;
                 if (isGravityReversed) {
                     reverseGravity();
                 }
@@ -174,6 +190,8 @@ public class PlayerScript : MonoBehaviour {
         switch (type) {
             case FrictionType.Normal:
                 //Etat par défaut
+                isCol = false;
+                isGlisse = false;
 
                 isFrictionEdited = false;
                 inertie = 0f;
@@ -183,6 +201,9 @@ public class PlayerScript : MonoBehaviour {
                 break;
 
             case FrictionType.Glissant:
+                isCol = false;
+                isGlisse = true;
+
                 jumpActive = jumpForce; ;
                 collable = false;
                 isFalling = false;
@@ -191,6 +212,9 @@ public class PlayerScript : MonoBehaviour {
                 break;
 
             case FrictionType.Collant:
+                isCol = true;
+                isGlisse = false;
+
                 jumpActive = 0f;
                 inertie = 0f;
                 collable = true;
