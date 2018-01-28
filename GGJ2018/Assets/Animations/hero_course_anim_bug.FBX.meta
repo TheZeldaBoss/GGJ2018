@@ -1,0 +1,244 @@
+fileFormatVersion: 2
+guid: 3fbff66a6a88c17409c4a4185e633485
+timeCreated: 1517134976
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Anim_Left_elbow
+    100002: Anim_Left_IK_Foot001
+    100004: Anim_Left_Shoulder
+    100006: Anim_Pelvis
+    100008: Anim_Right_IK_Foot
+    100010: Bone005
+    100012: Bone006
+    100014: Bone007
+    100016: Bone014
+    100018: Bone015
+    100020: Bone016
+    100022: Bone023
+    100024: Bone026
+    100026: Bone027
+    100028: Bone028
+    100030: Bone029
+    100032: Bone031
+    100034: Bone032
+    100036: Bone033
+    100038: Bone036
+    100040: Bone037
+    100042: Bone038
+    100044: Corps
+    100046: END1
+    100048: END4
+    100050: END5
+    100052: END7
+    100054: END8
+    100056: //RootNode
+    100058: IK_Goal_left_foot
+    100060: IK_Goal_Right_foot
+    100062: LP_Couette
+    100064: LP_Eye_Right
+    100066: LP_Eye_Right001
+    100068: LP_Head
+    100070: LP_Queue_Down
+    100072: LP_Queue_Middle
+    100074: LP_Queue_Top
+    100076: LP_Sourcile_Right
+    100078: LP_Sourcile_Right001
+    100080: LP_Tete
+    100082: LP_Top_Hair
+    100084: Pelvis
+    400000: Anim_Left_elbow
+    400002: Anim_Left_IK_Foot001
+    400004: Anim_Left_Shoulder
+    400006: Anim_Pelvis
+    400008: Anim_Right_IK_Foot
+    400010: Bone005
+    400012: Bone006
+    400014: Bone007
+    400016: Bone014
+    400018: Bone015
+    400020: Bone016
+    400022: Bone023
+    400024: Bone026
+    400026: Bone027
+    400028: Bone028
+    400030: Bone029
+    400032: Bone031
+    400034: Bone032
+    400036: Bone033
+    400038: Bone036
+    400040: Bone037
+    400042: Bone038
+    400044: Corps
+    400046: END1
+    400048: END4
+    400050: END5
+    400052: END7
+    400054: END8
+    400056: //RootNode
+    400058: IK_Goal_left_foot
+    400060: IK_Goal_Right_foot
+    400062: LP_Couette
+    400064: LP_Eye_Right
+    400066: LP_Eye_Right001
+    400068: LP_Head
+    400070: LP_Queue_Down
+    400072: LP_Queue_Middle
+    400074: LP_Queue_Top
+    400076: LP_Sourcile_Right
+    400078: LP_Sourcile_Right001
+    400080: LP_Tete
+    400082: LP_Top_Hair
+    400084: Pelvis
+    2100000: Corps
+    2100002: Tete
+    2100004: Cheveux top
+    2100006: Sourcil
+    2100008: eyes
+    2100010: Couette
+    2100012: queuetop
+    2100014: Queue middle
+    2100016: Queue down
+    2300000: LP_Couette
+    2300002: LP_Eye_Right
+    2300004: LP_Eye_Right001
+    2300006: LP_Head
+    2300008: LP_Queue_Down
+    2300010: LP_Queue_Middle
+    2300012: LP_Queue_Top
+    2300014: LP_Sourcile_Right
+    2300016: LP_Sourcile_Right001
+    2300018: LP_Top_Hair
+    3300000: LP_Couette
+    3300002: LP_Eye_Right
+    3300004: LP_Eye_Right001
+    3300006: LP_Head
+    3300008: LP_Queue_Down
+    3300010: LP_Queue_Middle
+    3300012: LP_Queue_Top
+    3300014: LP_Sourcile_Right
+    3300016: LP_Sourcile_Right001
+    3300018: LP_Top_Hair
+    4300000: Corps
+    4300002: LP_Head
+    4300004: LP_Top_Hair
+    4300006: LP_Sourcile_Right001
+    4300008: LP_Eye_Right001
+    4300010: LP_Eye_Right
+    4300012: LP_Sourcile_Right
+    4300014: LP_Couette
+    4300016: LP_Queue_Top
+    4300018: LP_Queue_Middle
+    4300020: LP_Queue_Down
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Corps
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
